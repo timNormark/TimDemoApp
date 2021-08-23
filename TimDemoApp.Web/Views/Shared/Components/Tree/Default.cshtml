@@ -1,0 +1,39 @@
+﻿@model TreeViewModel
+@{
+    void RenderTree(TreeViewModel tree)
+    {
+        if (tree.ChildNodes.Any())
+        {
+            <li>
+                <span>@tree.Node.NodeName</span>
+                <ul>
+                    @foreach (var childNode in tree.ChildNodes)
+                    {
+                        RenderTree(childNode);
+                    }
+                </ul>
+            </li>
+        }
+        else
+        {
+            <li>
+                <span>@tree.Node.NodeName</span>
+            </li>
+        }
+    }
+}
+
+<div class="justify-content-center d-flex">
+    @if (Model != null)
+    {
+        <ul>
+            @{
+                RenderTree(Model);
+            }
+        </ul>
+    }
+    else
+    {
+        <p>The tree does not contain any data!</p>
+    }
+</div>
