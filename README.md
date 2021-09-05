@@ -1,6 +1,4 @@
 # TimDemoApp
-Hi Backo!
-
 This is a small web application to show my style of coding.
 
 The project that is the startup project is TimDemoApp.Web.
